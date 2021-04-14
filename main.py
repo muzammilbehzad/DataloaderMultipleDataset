@@ -20,7 +20,7 @@ def get_args_parser():
     parser.add_argument('--data-set', default='BU4DFE', choices=['BU4DFE', 'BU3DFE', 'Bosphorous', 'BP4D'],
                         type=str, help='Corresponding dataset path')
     opt = parser.parse_args()
-    opt.data_path_base = ''   
+    opt.data_path_base = ''  # path to base dataset 
 
     return opt
 
