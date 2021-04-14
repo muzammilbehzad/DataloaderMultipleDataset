@@ -20,7 +20,7 @@ def get_args_parser():
     parser.add_argument('--data-set', default='BU4DFE', choices=['BU4DFE', 'BU3DFE', 'Bosphorous', 'BP4D'],
                         type=str, help='Corresponding dataset path')
     opt = parser.parse_args()
-    opt.data_path_base = r"J:\RankPool_Images_BU4DFE\Combination_28"    
+    opt.data_path_base = ''   
 
     return opt
 
@@ -59,7 +59,7 @@ class ConcatDataset(torch.utils.data.Dataset):
 
 def main():
     args = get_args_parser()
-    RA_views = ['RA0', 'RA20', 'RA_20']
+    RA_views = ['Front', 'Left', 'Right']
 
     args.data_path = os.path.join(args.data_path_base, RA_views[0])
     dataset_trainRA0, args.nb_classesRA0 = build_dataset(is_train=True, args=args, transform=None)
